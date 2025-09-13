@@ -305,8 +305,8 @@ def main():
         json.dump(output_data, f, indent=2)
 
     # Print summary
-    print(f"✅ Successfully assigned {len(assignments)} tickets")
-    print(f"📄 Results saved to: output_result.json")
+    print(f"Successfully assigned {len(assignments)} tickets")
+    print(f"Results saved to: output_result.json")
 
     # Quick analysis
     agent_assignment_counts = {}
@@ -314,7 +314,7 @@ def main():
         agent_id = assignment['assigned_agent_id']
         agent_assignment_counts[agent_id] = agent_assignment_counts.get(agent_id, 0) + 1
 
-    print("\n📊 Assignment Distribution:")
+    print("\nAssignment Distribution:")
     for agent_id, count in sorted(agent_assignment_counts.items()):
         agent_name = next(agent['name'] for agent in data['agents'] if agent['agent_id'] == agent_id)
         print(f"  {agent_id} ({agent_name}): {count} tickets")
